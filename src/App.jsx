@@ -7,7 +7,8 @@ import ResponsiveAppBar from "./Components/NavBar";
 import { MovieDataContext } from "./MovieDataContext";
 import CardList from "./Components/CardList";
 import LoginForm from "./Components/Login";
-import PrivateRoute from "./utils/PrivateRoute";
+import Logout from "./Components/Logout";
+import PrivateRoute from "./utils/PrivateRouter";
 
 function App() {
   const [data, setData] = useState([]);
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginForm />} />
+          {/* <PrivateRouter path="/card" element={<CardList />} /> */}
           <Route
             path="/card"
             element={
@@ -41,6 +43,7 @@ function App() {
             }
           />
           <Route path="/post" element={<CreateForm />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </MovieDataContext.Provider>
     </>

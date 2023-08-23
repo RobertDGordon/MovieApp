@@ -12,10 +12,11 @@ function App() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/movies')
+    fetch('http://localhost:8000/api/movies/')
       .then(response => response.json())
       .then(json => {
-        setData(json.result)
+        console.log("Response: ", json.data)
+        setData(json.data)
       })
   
     // return () => {

@@ -8,7 +8,7 @@ import { MovieDataContext } from "./MovieDataContext";
 import CardList from "./Components/CardList";
 import LoginForm from "./Components/Login";
 import Logout from "./Components/Logout";
-import PrivateRoute from "./utils/PrivateRouter";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [data, setData] = useState([]);
@@ -33,7 +33,6 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginForm />} />
-          {/* <PrivateRouter path="/card" element={<CardList />} /> */}
           <Route
             path="/card"
             element={

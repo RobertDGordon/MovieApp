@@ -26,10 +26,19 @@ export default function LoginForm() {
     })
       .then((response) => response.json())
       .then((json) => {
-        console.log("Response: ", json.success);
+        console.log("Response: ", json);
+        //set the session storage key/value
+        if(json.success){
+          sessionStorage.setItem("authenticated", json.success)
+          sessionStorage.setItem("id", json.data[0].id)
+          navigate('/card')
+        } else {
+          console.log(json.message)
+        }
+      })
+      .catch((err)=> {
+        console.log("Error:", err)
       });
-
-    // navigate('/')
   };
 
   return (
@@ -47,7 +56,6 @@ export default function LoginForm() {
       autoComplete="off"
     >
       <TextField
-        id="outlined-basic"
         name="email"
         label="email"
         variant="outlined"
@@ -55,7 +63,6 @@ export default function LoginForm() {
         value={email}
       />
       <TextField
-        id="outlined-basic"
         type="password"
         name="password"
         label="password"

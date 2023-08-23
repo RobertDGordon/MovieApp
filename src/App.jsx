@@ -6,6 +6,7 @@ import CreateForm from './Components/CreateForm'
 import ResponsiveAppBar from './Components/NavBar'
 import { MovieDataContext } from './MovieDataContext'
 import CardList from './Components/CardList'
+import LoginForm from './Components/Login';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/post" element={<CreateForm />} />
           <Route path="/card" element={<CardList />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
     </MovieDataContext.Provider>
     </>

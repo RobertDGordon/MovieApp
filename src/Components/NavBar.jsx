@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import { MovieDataContext } from '../MovieDataContext';
 
-const pages = ['post', 'card', 'blog'];
+const pages = ['post', 'card', 'blog', 'login'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
